@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+        <div>
+            <form action="/contact" method ='POST'>
+                <h1>Page Contact</h1>
+                <label for="nom">Nom</label><br>
+                <input type="text" id="nom" name="nom"><br>
+                <label for="mail">Email</label><br>
+                <input type="email" id="mail" name="mail"><br>
+                <label for="message"> Message</label><br>
+                <textarea name="message" id="message" cols="60" rows="10"></textarea><br>
+                <input type="submit" value="Send" >
+            </form>
+            {% for msg in messages%}
+                    <p>{{msg.nom}}</p>
+                    <p>{{msg.mail}}</p>
+                    <p>{{msg.message}}</p>
+                    <hr>
+                    
+            {%endfor%}
+            
+        </div>
+{% endblock content %}
